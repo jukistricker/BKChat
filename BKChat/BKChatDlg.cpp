@@ -12,6 +12,7 @@
 #define new DEBUG_NEW
 #endif
 #include "RegisterDlg.h"
+#include "CHomeDialog.h"
 
 
 // CAboutDlg dialog used for App About
@@ -354,7 +355,17 @@ void CBKChatDlg::OnBnClickedButtonLogin()
 	}
 	else {
 		idc_err_login_.SetWindowText(_T(""));
-		return;
+
+		// Ẩn dialog hiện tại
+		ShowWindow(SW_HIDE);
+
+		// Tạo và hiển thị Home Dialog
+		CHomeDialog homeDlg;
+		homeDlg.DoModal();
+
+		// Sau khi đóng Home Dialog, thoát khỏi login dialog
+		EndDialog(IDOK);
+		
 	}
 	UpdateData(FALSE);
 

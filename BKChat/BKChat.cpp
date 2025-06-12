@@ -6,6 +6,9 @@
 #include "framework.h"
 #include "BKChat.h"
 #include "BKChatDlg.h"
+using namespace Gdiplus;
+
+ULONG_PTR m_gdiplusToken;
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -40,6 +43,8 @@ CBKChatApp theApp;
 
 BOOL CBKChatApp::InitInstance()
 {
+	GdiplusStartupInput gdiplusStartupInput;
+	GdiplusStartup(&m_gdiplusToken, &gdiplusStartupInput, NULL);
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
 	// visual styles.  Otherwise, any window creation will fail.
@@ -115,12 +120,12 @@ BOOL CBKChatApp::InitInstance()
 
 	// Since the dialog has been closed, return FALSE so that we exit the
 	//  application, rather than start the application's message pump.
-	return FALSE;
+	return TRUE;
 }
 
 int CBKChatApp::ExitInstance()
 {
 	AfxOleTerm(FALSE);
-
-	return CWinApp::ExitInstance();
+	GdiplusShutdown(m_gdiplusToken);
+    return CWinApp::ExitInstance();
 }

@@ -48,6 +48,15 @@
     <ClInclude Include="CMyCheckbox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CHomeDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CFriendItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRoundedAvatar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BKChat.cpp">
@@ -74,6 +83,15 @@
     <ClCompile Include="CMyCheckbox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CHomeDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CFriendItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CRoundedAvatar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BKChat.rc">
@@ -87,6 +105,21 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\BKChat.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\Thanh\Downloads\avatar-3814049_48.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\Thanh\Downloads\image34.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\Thanh\Pictures\Screenshots\avt1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\Thanh\Pictures\Screenshots\avt2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

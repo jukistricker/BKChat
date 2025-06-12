@@ -185,8 +185,11 @@
   <ItemGroup>
     <ClInclude Include="BKChat.h" />
     <ClInclude Include="BKChatDlg.h" />
+    <ClInclude Include="CFriendItem.h" />
+    <ClInclude Include="CHomeDialog.h" />
     <ClInclude Include="CMyCheckbox.h" />
     <ClInclude Include="CMyEdit.h" />
+    <ClInclude Include="CRoundedAvatar.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MyCustomButton.h" />
     <ClInclude Include="MyCustomTransparentButton.h" />
@@ -198,8 +201,11 @@
   <ItemGroup>
     <ClCompile Include="BKChat.cpp" />
     <ClCompile Include="BKChatDlg.cpp" />
+    <ClCompile Include="CFriendItem.cpp" />
+    <ClCompile Include="CHomeDialog.cpp" />
     <ClCompile Include="CMyCheckbox.cpp" />
     <ClCompile Include="CMyEdit.cpp" />
+    <ClCompile Include="CRoundedAvatar.cpp" />
     <ClCompile Include="MyCustomButton.cpp" />
     <ClCompile Include="MyCustomTransparentButton.cpp" />
     <ClCompile Include="pch.cpp">
@@ -217,6 +223,11 @@
     <None Include="res\BKChat.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\Thanh\Downloads\avatar-3814049_48.bmp" />
+    <Image Include="C:\Users\Thanh\Downloads\image34.bmp" />
+    <Image Include="C:\Users\Thanh\Pictures\Screenshots\avt1.bmp" />
+    <Image Include="C:\Users\Thanh\Pictures\Screenshots\avt2.bmp" />
+    <Image Include="res\bitmap1.bmp" />
     <Image Include="res\BKChat.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
