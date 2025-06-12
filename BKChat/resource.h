@@ -12,12 +12,13 @@
 #define IDR_MAINFRAME                   128
 #define IDD_REGISTER_DIALOG             130
 #define IDD_HOME_DIALOG                 134
-#define IDB_BITMAP1                     136
 #define IDB_BITMAP2                     137
 #define IDB_BITMAP3                     138
 #define IDB_BITMAP_DEFAULT_AVT          139
 #define IDB_BITMAP4                     140
 #define IDB_BITMAP5                     141
+#define IDD_DIALOG                      142
+#define IDD_CHAT_DIALOG                 142
 #define IDC_EDIT_USERNAME               1000
 #define IDC_EDIT_PASSWORD               1001
 #define IDC_REMEMBER_ACC                1002
@@ -37,12 +38,11 @@
 #define IDC_ERR_LOGIN                   1017
 #define IDC_ERR_REG                     1018
 
-
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        142
+#define _APS_NEXT_RESOURCE_VALUE        144
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1019
 #define _APS_NEXT_SYMED_VALUE           101

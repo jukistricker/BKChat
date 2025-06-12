@@ -57,6 +57,9 @@
     <ClInclude Include="CRoundedAvatar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CChatDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BKChat.cpp">
@@ -92,6 +95,9 @@
     <ClCompile Include="CRoundedAvatar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CChatDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="BKChat.rc">
@@ -120,6 +126,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="C:\Users\Thanh\Pictures\Screenshots\avt2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\image34.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\avt1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\avt2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

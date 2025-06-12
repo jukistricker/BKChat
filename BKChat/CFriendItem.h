@@ -16,7 +16,12 @@ public:
     afx_msg LRESULT OnMouseLeave(WPARAM wParam, LPARAM lParam);
     DECLARE_MESSAGE_MAP()
     afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
+    afx_msg BOOL OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message);
 
+
+    afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+    void SetUser(const CString& username) { m_username.SetWindowText(username); }
+  
 
 protected:
     CStatic m_groupBox;
@@ -25,4 +30,5 @@ protected:
 
     bool m_hovered = false;
     bool m_tracking = false;
+
 };

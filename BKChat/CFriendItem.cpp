@@ -1,5 +1,7 @@
 ﻿#include "pch.h"
 #include "CFriendItem.h"
+#include "CChatDialog.h"
+#include "resource.h"
 
 // CFriendItem.cpp
 
@@ -12,6 +14,11 @@ BEGIN_MESSAGE_MAP(CFriendItem, CWnd)
     ON_WM_PAINT()
     ON_WM_MOUSEMOVE()
     ON_MESSAGE(WM_MOUSELEAVE, &CFriendItem::OnMouseLeave)
+    ON_WM_SETCURSOR()
+
+
+    ON_WM_LBUTTONDOWN()
+
 
 END_MESSAGE_MAP()
 
@@ -70,6 +77,7 @@ void CFriendItem::OnMouseMove(UINT nFlags, CPoint point)
     CWnd::OnMouseMove(nFlags, point);
 }
 
+//bỏ màu sau khi rời hover
 LRESULT CFriendItem::OnMouseLeave(WPARAM wParam, LPARAM lParam)
 {
     m_hovered = false;
@@ -79,6 +87,7 @@ LRESULT CFriendItem::OnMouseLeave(WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
+//custom màu hover
 void CFriendItem::OnPaint()
 {
     CPaintDC dc(this);
@@ -89,4 +98,27 @@ void CFriendItem::OnPaint()
     dc.FillSolidRect(&rect, bgColor);
 }
 
+//mở chatdialog
+void CFriendItem::OnLButtonDown(UINT nFlags, CPoint point)  
+{  
+    CWnd::OnLButtonDown(nFlags, point);  
+    CChatDialog* pChatDlg = new CChatDialog();
+    CString username;
+    m_username.GetWindowText(username);
+    pChatDlg->Create(IDD_CHAT_DIALOG);   
+    pChatDlg->SetTargetUser(username);   
+    pChatDlg->ShowWindow(SW_SHOW);
+}
+
+//hiển thị cusor
+BOOL CFriendItem::OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message)
+{
+    if (m_hovered)
+    {
+        ::SetCursor(AfxGetApp()->LoadStandardCursor(IDC_HAND));
+        return TRUE;
+    }
+
+    return CWnd::OnSetCursor(pWnd, nHitTest, message);
+}
 

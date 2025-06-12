@@ -185,6 +185,7 @@
   <ItemGroup>
     <ClInclude Include="BKChat.h" />
     <ClInclude Include="BKChatDlg.h" />
+    <ClInclude Include="CChatDialog.h" />
     <ClInclude Include="CFriendItem.h" />
     <ClInclude Include="CHomeDialog.h" />
     <ClInclude Include="CMyCheckbox.h" />
@@ -201,6 +202,7 @@
   <ItemGroup>
     <ClCompile Include="BKChat.cpp" />
     <ClCompile Include="BKChatDlg.cpp" />
+    <ClCompile Include="CChatDialog.cpp" />
     <ClCompile Include="CFriendItem.cpp" />
     <ClCompile Include="CHomeDialog.cpp" />
     <ClCompile Include="CMyCheckbox.cpp" />
@@ -227,8 +229,11 @@
     <Image Include="C:\Users\Thanh\Downloads\image34.bmp" />
     <Image Include="C:\Users\Thanh\Pictures\Screenshots\avt1.bmp" />
     <Image Include="C:\Users\Thanh\Pictures\Screenshots\avt2.bmp" />
+    <Image Include="res\avt1.bmp" />
+    <Image Include="res\avt2.bmp" />
     <Image Include="res\bitmap1.bmp" />
     <Image Include="res\BKChat.ico" />
+    <Image Include="res\image34.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
