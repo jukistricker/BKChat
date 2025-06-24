@@ -187,11 +187,16 @@
     <ClInclude Include="BKChatDlg.h" />
     <ClInclude Include="CChatDialog.h" />
     <ClInclude Include="CFriendItem.h" />
+    <ClInclude Include="Chat.h" />
     <ClInclude Include="CHomeDialog.h" />
+    <ClInclude Include="CMessageItem.h" />
     <ClInclude Include="CMyCheckbox.h" />
     <ClInclude Include="CMyEdit.h" />
+    <ClInclude Include="CRoundButton.h" />
     <ClInclude Include="CRoundedAvatar.h" />
+    <ClInclude Include="CRoundEdit.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="Message.h" />
     <ClInclude Include="MyCustomButton.h" />
     <ClInclude Include="MyCustomTransparentButton.h" />
     <ClInclude Include="pch.h" />
@@ -204,10 +209,15 @@
     <ClCompile Include="BKChatDlg.cpp" />
     <ClCompile Include="CChatDialog.cpp" />
     <ClCompile Include="CFriendItem.cpp" />
+    <ClCompile Include="Chat.cpp" />
     <ClCompile Include="CHomeDialog.cpp" />
+    <ClCompile Include="CMessageItem.cpp" />
     <ClCompile Include="CMyCheckbox.cpp" />
     <ClCompile Include="CMyEdit.cpp" />
+    <ClCompile Include="CRoundButton.cpp" />
     <ClCompile Include="CRoundedAvatar.cpp" />
+    <ClCompile Include="CRoundEdit.cpp" />
+    <ClCompile Include="Message.cpp" />
     <ClCompile Include="MyCustomButton.cpp" />
     <ClCompile Include="MyCustomTransparentButton.cpp" />
     <ClCompile Include="pch.cpp">
@@ -233,7 +243,9 @@
     <Image Include="res\avt2.bmp" />
     <Image Include="res\bitmap1.bmp" />
     <Image Include="res\BKChat.ico" />
+    <Image Include="res\bmp00001.bmp" />
     <Image Include="res\image34.bmp" />
+    <Image Include="res\mood-happy.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

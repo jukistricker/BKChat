@@ -33,10 +33,11 @@ BOOL CFriendItem::Create(CWnd* pParent, int x, int y, int width, int height, con
     // Avatar
     m_avatar.Create(_T(""), WS_CHILD | WS_VISIBLE | SS_BITMAP, CRect(10, 5, 60, 55), this);
     m_avatar.SetBitmap(hAvatar);
-
+    m_avatarBitmap = hAvatar;
     // Username
     m_username.Create(name, WS_CHILD | WS_VISIBLE | SS_LEFT, CRect(70, 20, width - 10, 50), this);
     m_username.SetFont(CFont::FromHandle((HFONT)GetStockObject(DEFAULT_GUI_FONT)));
+    
 
     return TRUE;
 }
@@ -99,17 +100,36 @@ void CFriendItem::OnPaint()
 }
 
 //mở chatdialog
-void CFriendItem::OnLButtonDown(UINT nFlags, CPoint point)  
-{  
-    CWnd::OnLButtonDown(nFlags, point);  
-    CChatDialog* pChatDlg = new CChatDialog();
+void CFriendItem::OnLButtonDown(UINT nFlags, CPoint point)
+{
+    CWnd::OnLButtonDown(nFlags, point);
+
     CString username;
     m_username.GetWindowText(username);
-    pChatDlg->Create(IDD_CHAT_DIALOG);   
-    pChatDlg->SetTargetUser(username);   
-    pChatDlg->ShowWindow(SW_SHOW);
-}
 
+    TRACE(_T("Opening chat dialog for: %s\n"), username);
+
+    CChatDialog* pChatDlg = new CChatDialog();
+
+    // ✅ Tạo dialog trước
+    if (!pChatDlg->Create(IDD_CHAT_DIALOG)) {
+        TRACE(_T("Failed to create chat dialog\n"));
+        delete pChatDlg;
+        return;
+    }
+
+    // ✅ Gán avatar TRƯỚC
+    if (m_avatarBitmap) {
+        pChatDlg->SetTargetAvatar(m_avatarBitmap);
+        TRACE(_T("CFriendItem::OnLButtonDown m_avatarBitmap"));
+    }
+
+    // ✅ Gán username SAU (vì nó gọi RefreshMessages)
+    pChatDlg->SetTargetUser(username);
+
+    pChatDlg->ShowWindow(SW_SHOW);
+
+}
 //hiển thị cusor
 BOOL CFriendItem::OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message)
 {

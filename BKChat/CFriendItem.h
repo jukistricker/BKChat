@@ -1,4 +1,4 @@
-// FriendItem.h
+// CFriendItem.h
 #pragma once
 #include "afxwin.h"
 
@@ -18,6 +18,8 @@ public:
     afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
     afx_msg BOOL OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message);
 
+    HBITMAP m_avatarBitmap = NULL;
+    HBITMAP GetAvatarBitmap() const { return m_avatarBitmap; }
 
     afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
     void SetUser(const CString& username) { m_username.SetWindowText(username); }

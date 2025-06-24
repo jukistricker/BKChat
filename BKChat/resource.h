@@ -19,6 +19,7 @@
 #define IDB_BITMAP5                     141
 #define IDD_DIALOG                      142
 #define IDD_CHAT_DIALOG                 142
+#define IDB_BITMAP1                     146
 #define IDC_EDIT_USERNAME               1000
 #define IDC_EDIT_PASSWORD               1001
 #define IDC_REMEMBER_ACC                1002
@@ -37,14 +38,20 @@
 #define IDC_EDIT_REG_PW                 1016
 #define IDC_ERR_LOGIN                   1017
 #define IDC_ERR_REG                     1018
+#define IDC_EDIT_INPUT_MSG              1019
+#define IDC_BUTTON_ICON                 1020
+#define IDC_BUTTON_IMG                  1021
+#define IDC_BUTTON_FILE                 1022
+#define IDC_BUTTON6                     1029
+#define IDC_BUTTON_SEND                 1029
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        144
+#define _APS_NEXT_RESOURCE_VALUE        147
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1019
+#define _APS_NEXT_CONTROL_VALUE         1030
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
