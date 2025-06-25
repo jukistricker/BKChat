@@ -332,6 +332,15 @@ void CBKChatDlg::OnBnClickedRememberAcc()
 {
 	// TODO: Add your control notification handler code here
 }
+BOOL CBKChatDlg::PreTranslateMessage(MSG* pMsg)
+{
+	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN)
+	{
+		OnBnClickedButtonLogin();
+		return TRUE; 
+	}
+	return CDialogEx::PreTranslateMessage(pMsg);
+}
 
 void CBKChatDlg::OnBnClickedButtonLogin()
 {

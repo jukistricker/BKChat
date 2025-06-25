@@ -42,7 +42,6 @@
 #define IDC_BUTTON_ICON                 1020
 #define IDC_BUTTON_IMG                  1021
 #define IDC_BUTTON_FILE                 1022
-#define IDC_BUTTON6                     1029
 #define IDC_BUTTON_SEND                 1029
 
 // Next default values for new objects

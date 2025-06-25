@@ -41,6 +41,10 @@ protected:
     afx_msg LRESULT OnRefreshMessages(WPARAM wParam, LPARAM lParam);
     virtual BOOL OnInitDialog();
 
+    void CreateInputArea();
+
+    void ResizeControls();
+
     // ✅ Thêm các message handlers
     afx_msg void OnVScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar);
     afx_msg BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint pt);
@@ -51,6 +55,12 @@ protected:
     void ScrollToPosition(int newPos);
     void ScrollToBottom();
     int GetMaxScrollPos();
+
+    void ApplyScrollPosition();
+    void DebugMessagePositions();
+    void EnsureLastMessageVisible();
+
+    afx_msg void OnPaint();
 
     DECLARE_MESSAGE_MAP()
 public:
@@ -68,9 +78,12 @@ public:
 
 private:
     // ✅ Thêm các biến cho scroll
+    static const int INPUT_AREA_HEIGHT = 60;
+
     int m_totalContentHeight;    // Tổng chiều cao nội dung
     int m_scrollPos;            // Vị trí scroll hiện tại
     int m_clientHeight;         // Chiều cao client area
+    int m_chatAreaHeight;  // ✅ lưu chiều cao vùng chat
     bool m_isScrollEnabled;     // Có cần scroll không
 
     // ✅ Thêm các constants
@@ -81,6 +94,19 @@ public:
     CButton btn_icon;
     CButton btn_img;
     CButton btn_file;
+	CButton btn_send;
     afx_msg void OnBnClickedButton6();
+    afx_msg void OnBnClickedButtonSend();
+
+    struct MessageItemInfo {
+        CMessageItem* item;
+        CRect logicalRect;  // ✅ Lưu vị trí logic ban đầu
+
+        MessageItemInfo(CMessageItem* pItem, const CRect& rect)
+            : item(pItem), logicalRect(rect) {
+        }
+    };
+
+    std::vector<MessageItemInfo> m_messageInfos;
 };
 

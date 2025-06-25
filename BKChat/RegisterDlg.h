@@ -29,6 +29,9 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 
+	virtual BOOL PreTranslateMessage(MSG* pMsg) override;
+
+
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedOk();

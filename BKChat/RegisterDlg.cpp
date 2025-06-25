@@ -204,6 +204,17 @@ void RegisterDlg::OnStnClickedStaticRegRetypepw()
 	// TODO: Add your control notification handler code here
 }
 
+BOOL RegisterDlg::PreTranslateMessage(MSG* pMsg)
+{
+	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN)
+	{
+		OnBnClickedButtonCreateAccount();
+		return TRUE; // Ngăn xử lý mặc định
+	}
+	return CDialogEx::PreTranslateMessage(pMsg);
+}
+
+
 void RegisterDlg::OnBnClickedButtonCreateAccount()
 {
 	UpdateData(TRUE);
@@ -234,6 +245,7 @@ void RegisterDlg::OnBnClickedButtonCreateAccount()
 	}
 	else{
 		idc_er_reg_.SetWindowText(_T(""));
+		OnOK();
 		return;
 	}
 	UpdateData(FALSE);
